@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  prompay:
+    image: prompay
+    build:
+      context: .
+      dockerfile: ./Dockerfile
