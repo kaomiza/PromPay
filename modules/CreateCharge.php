@@ -1,22 +1,24 @@
 <?php
 include "../modules/Config.php";
 
-session_start();
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST['id'];
+
+    $source = OmiseSource::create(array(
+        'amount' => 2000,
+        'currency' => 'THB',
+        'type' => 'promptpay'
+    ));
+
+    $id = $source["id"];
 
     $change = OmiseCharge::create(array(
-        'amount' => 100000,
-        'currency' => 'thb',
+        'amount' => 2000,
+        'currency' => 'THB',
         'source' => $id
     ));
 }
 
 // print_r($change);
 
-$_SESSION['source'] = json_encode($change["source"]);
-
-
-header("location: ../src/ChargePayment.php");
-exit(0);
+echo json_encode($change["source"]);

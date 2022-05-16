@@ -1,0 +1,24 @@
+body.page1 {
+  background-color: #007aff;
+  overflow-y: hidden;
+}
+
+body.page2 {
+  background-color: #e7d362;
+  overflow-y: hidden;
+}
+
+.prompay {
+  width: 20%;
+  height: 20%;
+  margin-top: -500px;
+}
+
+.fas.fa-circle {
+  font-size: 200pt;
+  color: #e7d362;
+}
+
+.circle-header {
+  margin-top: -150px;
+}
